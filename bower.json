@@ -1,7 +1,7 @@
 {
   "name": "datemath-parser",
-  "main": "./dist/datemath-parser.js",
-  "version": "1.0.0",
+  "main": "./index.js",
+  "version": "1.0.2",
   "homepage": "https://github.com/randing89/datemath-parser",
   "authors": [
     "Ran Ding <randing89@gmail.com>"
