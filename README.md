@@ -17,3 +17,11 @@ http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/mapping-da
 > Here are some samples: `now+1h`, `now+1h+1m`, `now+1h/d`, `2012-01-01||+1M/d`.
 
 > Note, when doing range type searches, and the upper value is inclusive, the rounding will properly be rounded to the ceiling instead of flooring it.
+
+
+# Usage
+Returns an integer representing timestamp in milliseconds
+```
+var parser = require('datemath-parser');
+parser.parse(dateMathExpression, [now], [roundUp], [timeZone]);
+```
