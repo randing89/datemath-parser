@@ -1,7 +1,7 @@
 var helper = require('./helper');
 
 describe('Expression with timestamp', function () {
-    it('should parse dates with timezone', function () {
+    it('should parse timestamp', function () {
         helper.assertDateMathEquals('1418248078000', '2014-12-10T21:47:58.000');
 
         // timezone does not affect timestamps
@@ -15,8 +15,10 @@ describe('Expression with timestamp', function () {
 
         // a timestamp before 10000 is a year
         helper.assertDateMathEquals('9999', '9999-01-01T00:00:00.000');
+
         // 10000 is the first timestamp
         helper.assertDateMathEquals('10000', '1970-01-01T00:00:10.000');
+
         // but 10000 with T is still a date format
         helper.assertDateMathEquals('10000T', '10000-01-01T00:00:00.000');
     });

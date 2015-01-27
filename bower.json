@@ -1,0 +1,21 @@
+{
+  "name": "datemath-parser",
+  "main": "./dist/datemath-parser.js",
+  "version": "1.0.0",
+  "homepage": "https://github.com/randing89/datemath-parser",
+  "authors": [
+    "Ran Ding <randing89@gmail.com>"
+  ],
+  "description": "A date math parser compatible with elastic search format",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

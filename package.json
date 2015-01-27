@@ -2,7 +2,6 @@
   "name": "datemath-parser",
   "version": "1.0.0",
   "description": "A date math parser compatible with elastic search format",
-  "main": "index.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha ./test/**/test*.js"
   },
@@ -19,5 +18,11 @@
   "devDependencies": {
     "chai": "^1.10.0",
     "mocha": "^2.1.0"
+  },
+  "dependencies": {
+    "lodash": "^3.0.0",
+    "moment": "^2.9.0",
+    "string.prototype.endswith": "^0.2.0",
+    "string.prototype.startswith": "^0.2.0"
   }
 }
