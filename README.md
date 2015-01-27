@@ -21,7 +21,7 @@ http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/mapping-da
 
 # Usage
 Returns an integer representing timestamp in milliseconds
-```
+```javascript
 var parser = require('datemath-parser');
 parser.parse(dateMathExpression, [now], [roundUp], [timeZone]);
 ```
