@@ -21,8 +21,6 @@
   },
   "dependencies": {
     "lodash": "^3.0.0",
-    "moment": "^2.9.0",
-    "string.prototype.endswith": "^0.2.0",
-    "string.prototype.startswith": "^0.2.0"
+    "moment": "^2.9.0"
   }
 }

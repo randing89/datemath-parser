@@ -1,6 +1,3 @@
-require('string.prototype.startswith');
-require('string.prototype.endswith');
-
 var moment = require('moment');
 var formats = require('./src/supportedFormats');
 
@@ -9,7 +6,7 @@ module.exports = {
         var self = this;
 
         var math, time;
-        if (expression.startsWith('now')) {
+        if (expression.substring(0, 3) === 'now') {
             math = expression.substring(3);
             time = moment.utc(now) || moment.utc();
         } else {
