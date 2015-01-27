@@ -1,6 +1,6 @@
 {
   "name": "datemath-parser",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A date math parser compatible with elastic search format",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha ./test/**/test*.js"
