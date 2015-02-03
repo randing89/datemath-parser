@@ -27,3 +27,8 @@ Returns an integer representing timestamp in milliseconds
 var parser = require('datemath-parser');
 parser.parse(dateMathExpression, [now], [roundUp], [timeZone]);
 ```
+
+# Test
+```
+npm test
+```
