@@ -1,6 +1,6 @@
 {
   "name": "datemath-parser",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A date math parser compatible with elastic search format",
   "scripts": {
     "postinstall": "npm install -g istanbul",
