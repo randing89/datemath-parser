@@ -3,8 +3,7 @@
   "version": "1.0.4",
   "description": "A date math parser compatible with elastic search format",
   "scripts": {
-    "postinstall": "npm install -g istanbul",
-    "test": "istanbul cover ./node_modules/mocha/bin/_mocha ./test/**/test*.js --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+    "test": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha ./test/**/test*.js --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "repository": {
     "type": "git",
@@ -19,6 +18,7 @@
   "devDependencies": {
     "chai": "^1.10.0",
     "coveralls": "^2.11.2",
+    "istanbul": "^0.3.13",
     "mocha": "^2.1.0",
     "mocha-lcov-reporter": "0.0.1"
   },
