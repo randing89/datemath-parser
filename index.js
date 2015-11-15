@@ -2,7 +2,7 @@ var moment = require('moment');
 var formats = require('./src/supportedFormats');
 
 module.exports = (function() {
-  function parse(expression, now, roundUp, timeZone) {
+  function parse(expression, now, roundUp, timeZone, useTimeZoneForRounding) {
 
     var math, time;
     if (expression.substring(0, 3) === 'now') {
@@ -27,10 +27,10 @@ module.exports = (function() {
       return time.valueOf();
     }
 
-    return evaluate(math, time, roundUp).valueOf();
+    return evaluate(math, time, roundUp, timeZone, useTimeZoneForRounding).valueOf();
   }
 
-  function evaluate(expression, now, roundUp) {
+  function evaluate(expression, now, roundUp, timeZone, useTimeZoneForRounding) {
     var val = 0;
 
     for (var i = 0; i < expression.length;) {
@@ -48,13 +48,13 @@ module.exports = (function() {
         next = expression[i++];
 
         switch (next) {
-          case 'y': case 'Y': now = roundDate(now, 'year', roundUp); break;
-          case 'M': now = roundDate(now, 'month', roundUp); break;
-          case 'd': case 'D': now = roundDate(now, 'date', roundUp); break;
-          case 'w': case 'W': now = roundDate(now, 'weekday', roundUp); break;
-          case 'h': case 'H': now = roundDate(now, 'hour', roundUp); break;
+          case 'y': case 'Y': now = roundDate(now, 'year', roundUp, timeZone, useTimeZoneForRounding); break;
+          case 'M': now = roundDate(now, 'month', roundUp, timeZone, useTimeZoneForRounding); break;
+          case 'd': case 'D': now = roundDate(now, 'date', roundUp, timeZone, useTimeZoneForRounding); break;
+          case 'w': case 'W': now = roundDate(now, 'weekday', roundUp, timeZone, useTimeZoneForRounding); break;
+          case 'h': case 'H': now = roundDate(now, 'hour', roundUp, timeZone, useTimeZoneForRounding); break;
           case 'm': now = roundDate(now, 'minute', roundUp); break;
-          case 's': case 'S': now = roundDate(now, 'second', roundUp); break;
+          case 's': case 'S': now = roundDate(now, 'second', roundUp, timeZone, useTimeZoneForRounding); break;
 
         }
 
@@ -107,7 +107,11 @@ module.exports = (function() {
     return now;
   }
 
-  function roundDate(now, unit, roundUp) {
+  function roundDate(now, unit, roundUp, timeZone, useTimeZoneForRounding) {
+    if (useTimeZoneForRounding) {
+      now = now.utcOffset(timeZone);
+    }
+
     switch (unit) {
       case 'year': now.month(0); /* falls through */
       case 'month': now.date(1); /* falls through */

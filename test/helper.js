@@ -5,12 +5,12 @@ var moment = require('moment');
 var parser = require('../index');
 
 module.exports = {
-    assertDateMathEquals: function (test, expected, now, roundUp, timeZone) {
+    assertDateMathEquals: function (test, expected, now, roundUp, timeZone, useTimeZoneForRounding) {
         now = now || 0;
         roundUp = !!roundUp;
         timeZone = timeZone || null;
 
-        var testTimestamp = parser.parse(test, now, roundUp, timeZone);
+        var testTimestamp = parser.parse(test, now, roundUp, timeZone, useTimeZoneForRounding);
         var expectedTimestamp = parser.parse(expected);
 
         this.assertDateMathResult(test, testTimestamp);
