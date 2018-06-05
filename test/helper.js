@@ -1,7 +1,6 @@
 var expect = require('chai').expect;
 var moment = require('moment');
 
-
 var parser = require('../index');
 
 module.exports = {

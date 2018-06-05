@@ -1,6 +1,13 @@
 var moment = require('moment');
 var formats = require('./src/supportedFormats');
 
+// Add 5 digits year variations for compatibility 
+formats.forEach(function(format) {
+  if (format.indexOf('YYYY') !== -1) {
+    formats.push(format.replace(/YYYY/, 'YYYYY'));
+  }
+});
+
 module.exports = (function() {
   function parse(expression, now, roundUp, timeZone, useTimeZoneForRounding) {
 

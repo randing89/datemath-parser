@@ -1,5 +1,6 @@
 module.exports = [
     'YYYY', // Year
+    'YYYY[T]', // Year
     'YYYYMM', // Year_month
     'YYYYMMDD', // basic_date
     'YYYYMMDD[T]HHmmss.SSSZ', // basic_date_time
