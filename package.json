@@ -23,7 +23,7 @@
     "mocha-lcov-reporter": "0.0.1"
   },
   "dependencies": {
-    "lodash": "^3.0.0",
+    "lodash": "^4.17.5",
     "moment": "^2.9.0"
   }
 }
