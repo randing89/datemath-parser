@@ -3,7 +3,6 @@ A date math parser compatible with elastic search format
 
 [![Build Status](https://travis-ci.org/randing89/datemath-parser.svg)](https://travis-ci.org/randing89/datemath-parser)
 [![Coverage Status](https://coveralls.io/repos/randing89/datemath-parser/badge.svg)](https://coveralls.io/r/randing89/datemath-parser)
-[![Dependency Status](https://gemnasium.com/randing89/datemath-parser.svg)](https://gemnasium.com/randing89/datemath-parser)
 
 # Date Math Definition
 http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/mapping-date-format.html#date-math
